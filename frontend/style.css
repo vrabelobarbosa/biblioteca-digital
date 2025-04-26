@@ -1,0 +1,137 @@
+/* Reset e base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    color: #333;
+}
+
+/* Títulos */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Seções */
+.form-section, .table-section {
+    background: #ffffff;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+form input {
+    flex: 1 1 45%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+form button {
+    padding: 10px 20px;
+    margin: 10px 5px 0 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+}
+form button#submitButton {
+    background-color: #007bff;
+}
+form button#submitButton:hover {
+    background-color: #0056b3;
+}
+form button#cancelarEdicao {
+    background-color: #dc3545;
+}
+form button#cancelarEdicao:hover {
+    background-color: #b02a37;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+th {
+    background-color: #007bff;
+    color: #fff;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Botões de ação na tabela */
+table button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+    margin: 0 2px;
+}
+table button.edit {
+    background-color: #17a2b8;
+}
+table button.edit:hover {
+    background-color: #117a8b;
+}
+table button.delete {
+    background-color: #dc3545;
+}
+table button.delete:hover {
+    background-color: #b02a37;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    form input {
+        flex: 1 1 100%;
+    }
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    thead tr {
+        display: none;
+    }
+    tr {
+        margin-bottom: 15px;
+    }
+    td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
